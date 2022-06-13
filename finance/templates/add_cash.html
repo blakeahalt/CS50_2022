@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<html>
+       <!-- <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        table.center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+       </style> -->
+      <h1 style="text-align:center;">Add Cash</h1>
+      <form style="text-align:center;" action="/add_cash" method="post">
+        <input style="text-align:center;" autocomplete="on" autofocus name="add_cash" placeholder="Add Cash" type="numeric" min="0">
+        <input style="text-align:center;" type="submit" value="Add">
+        <br>
+        <br>
+      </form>
+
+</html>
+{% endblock %}

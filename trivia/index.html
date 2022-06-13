@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded", function() {
+                let correct=document.querySelector(".correct");
+                correct.addEventListener("click", function() {
+                    correct.style.backgroundColor = "green";
+                    document.querySelector("#feedback1").innerHTML = "Correct!";
+                });
+
+                let incorrect1=document.querySelector(".incorrect1");
+                incorrect1.addEventListener("click", function() {
+                    incorrect1.style.backgroundColor = "red";
+                    document.querySelector("#feedback1").innerHTML = "Incorrect!";
+                });
+
+                let incorrect2=document.querySelector(".incorrect2");
+                incorrect2.addEventListener("click", function() {
+                    incorrect2.style.backgroundColor = "red";
+                    document.querySelector(".incorrect2").innerHTML = "Nah!";
+                    document.querySelector("#feedback1").innerHTML = "Incorrect!";
+                });
+
+                let syke=document.querySelector("#syke");
+                syke.addEventListener("click", function() {
+                    syke.style.backgroundColor = "orange";
+                    document.querySelector("#syke").innerHTML = "Nah!";
+                    document.querySelector("#feedback1").innerHTML = "Incorrect!";
+                });
+
+                // let sike=document.querySelector(".sike");
+                // <button onclick="function getIt()">CryptoZunks</button>
+                // });
+
+                // function getIt() {
+                //         // document.getElementById("#syke").innerHTML="Nope";
+                //     });
+                // //     sike.style.innerHTML = "Nope";
+                // }
+                // let incorrect = document.querySelectorAll(".incorrect");
+                //     for (let i = 0; i < incorrect.length; i++) {
+                //         incorrect[i].addEventListener("click", function() {
+                //         incorrect[i].style.backgroundColor = "red";
+                //         document.querySelector("#feedback1").innerHTML = "Incorrect!";
+                //     });
+
+                document.querySelector("#submit").addEventListener("click", function() {
+                    let text=document.querySelector("input");
+                    if (text.value.toLowerCase() == "twitter") {
+                        text.style.backgroundColor = "green";
+                        document.querySelector("#feedback2").innerHTML = "Correct";
+                    } else {
+                        text.style.backgroundColor = "red";
+                        document.querySelector("#feedback2").innerHTML = "Incorrect!";
+                    }
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which project has Zagabond.eth not rugged?</h3>
+
+                <button class="incorrect1">Azuki</button>
+                <button class="incorrect2">CryptoPhunks</button>
+                <button id="syke" onclick="getIt()">Nah</button>
+                <!-- <button class="sike" id="syke">CryptoZunks</button> -->
+                <button class="correct">CryptoPunks</button>
+
+                <p id="feedback1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What company is Elon Musk set to purchase?</h3>
+
+                <input type="text">
+                <button id="submit">Submit</button>
+
+                <p id="feedback2"></p>
+
+            </div>
+        </div>
+    </body>
+</html>

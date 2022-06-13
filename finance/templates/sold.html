@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+       <h1 style="text-align:center;">SELL STOCKS</h1>
+       <
+       <form style="text-align:center;" action="/sell" method="post">
+              <input style="text-align:center;" autocomplete="on" autofocus name="symbol" placeholder="Symbol" type="text">
+              <br>
+              <input style="text-align:center;" autocomplete="on" autofocus name="shares" placeholder="Shares" type="numeric" min="0">
+              <br>
+              <input style="text-align:center;" type="submit" value="Sell">
+       </form>
+
+{% endblock %}
