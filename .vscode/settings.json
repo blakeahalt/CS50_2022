@@ -1,7 +1,11 @@
 {
-    "files.associations": {
-        "sstream": "c",
-        "random": "c",
-        "stdlib.h": "c"
-    }
+  "files.associations": {
+    "sstream": "c",
+    "random": "c",
+    "stdlib.h": "c"
+  },
+  "python.linting.enabled": true,
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${/Users/blakeahalt/CS50_2022/finance};"
+  }
 }
