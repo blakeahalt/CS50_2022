@@ -31,7 +31,7 @@ db = SQL("sqlite:///finance.db")
 # Make sure API key is set
 # if not os.environ.get("API_KEY"):
 #     raise RuntimeError("API_KEY not set")
-api_key = os.environ.get("PRIVATE_API_KEY")
+api_key = os.environ.get("API_KEY")
 
 @app.after_request
 def after_request(response):
@@ -533,3 +533,6 @@ def add_cash():
 
     else:
         return render_template("add_cash.html")
+
+
+        
