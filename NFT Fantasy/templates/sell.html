@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<html>
+       <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        table.center {
+          margin-left: auto;
+          margin-right: auto;
+        }
+       </style>
+       <h1 style="text-align:center;">Sell Stocks</h1>
+       <!-- <form style="text-align:center;" action="/buy" method="post">
+         <input style="text-align:center;" autocomplete="on" autofocus name="symbol" placeholder="Symbol" type="text">
+         <input style="text-align:center;" autocomplete="on" autofocus name="shares" placeholder="Shares" type="numeric" min="0">
+         <input style="text-align:center;" type="submit" value="Sell">
+         <br>
+         <br>
+       </form> -->
+       <h3 style="text-align:left; margin-left:1em">{{  username  }}'s Portfolio</h2>
+        <!-- <table class="table table-striped" class="center" style="width:90%"> -->
+        <br>
+        <form style="text-align:center;" action="/sell" method="post">
+          <!-- <input style="text-align:center;" autocomplete="on" autofocus name="symbol" placeholder="Symbol" type="text"> -->
+          <select style="width:80px; height:30px" name="symbol">
+              {% for row in portfolio %}
+                <option value="{{  row.symbol  }}">{{  row.symbol  }}</option>
+              {% endfor %}
+          </select>
+          <input style="text-align:center;" autocomplete="on" autofocus name="shares" placeholder="Shares" type="numeric" min="0">
+          <button style="text-align:center" class="btn btn-primary" type="submit" value="Buy">Sell</button>
+          <br>
+          <br>
+        </form>
+        <table id="datatable" class="table table-striped center" role="grid" style="width:90%">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Name</th>
+              <th style="text-align:center" colspan="1">Shares</th>
+              <th style="text-align: right">Price</th>
+              <th style="text-align: right">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in portfolio %}
+              <tr>
+                <td id="symbol">{{  row.symbol  }}</td>
+                <td id="name">{{  row.name  }}</td>
+                <td style="text-align: center" id="shares">{{  row.shares  }}
+                <td style="text-align: right" id="price">{{  row.price|usd  }}</td>
+                <td style="text-align: right" id="total">{{  row.total|usd  }}</td>
+              </tr>
+            {% endfor %}
+              <tr>
+                <td style="text-align: right" colspan="4" scope="1">Cash</td>
+                <td style="text-align: right">{{  cash_usd  }}</td>
+              </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th style="text-align: right" colspan="4" scope="1">TOTAL</td>
+              <td style="text-align: right" scope="1">{{  grand_total_usd  }}</td>
+            </tr>
+          </tfoot>
+         </table>
+    </html>
+{% endblock %}

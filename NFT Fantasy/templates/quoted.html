@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+       <h1 style="text-align:center;">STOCK QUOTES</h1>
+
+       <!-- <form style="text-align:center;" action="/quoted" method="post">
+              <input autocomplete="off" autofocus name="symbol" placeholder="Symbol" type="text">
+              <br>
+              <input type="submit" value="Register">
+       </form> -->
+
+
+       <p>Company: {{ name }} </p>
+       <p>Stock: {{ symbol }} </p>
+       <p>Price: {{ price }} </p>
+
+{% endblock %}

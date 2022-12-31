@@ -1,0 +1,92 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@auth0/auth0-react": "^1.12.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@popperjs/core": "^2.11.6",
+    "@react-oauth/google": "^0.4.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "ag-grid-community": "^28.2.0",
+    "ag-grid-react": "^28.2.0",
+    "alchemy-sdk": "^2.1.0",
+    "argon2": "^0.30.1",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.2",
+    "chart.js": "^3.9.1",
+    "cors": "^2.8.5",
+    "eslint-config-react-app": "^7.0.1",
+    "ethers": "^5.7.1",
+    "express": "^4.18.2",
+    "gapi-script": "^1.2.0",
+    "google-auth-library": "^8.5.2",
+    "https-browserify": "^1.0.0",
+    "jwa": "^2.0.0",
+    "jwt-decode": "^3.1.2",
+    "nodemon": "^2.0.19",
+    "os-browserify": "^0.3.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "^18.2.0",
+    "react-google-login": "^5.2.2",
+    "react-grid-system": "^8.1.6",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.4.1",
+    "rsuite": "^5.19.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "webpack": "^5.74.0"
+  },
+  "browser": {
+    "crypto": false
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "nodemon /.src/index.js",
+    "build": "react-scripts build",
+    "test": "react-app-rewired test",
+    "eject": "react-script eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.2",
+    "@types/jsonwebtoken": "^8.5.9",
+    "argon2": "^0.30.1",
+    "crypto-browserify": "^3.12.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "react-app-rewired": "^1.6.2",
+    "react-scripts": "^5.0.1",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": "v16.15.1",
+    "npm": "7.24.2"
+  }
+}
