@@ -5,6 +5,23 @@
 {% endblock %}
 
 {% block main %}
+<div>
+<div style='font-size: 50px;'>
+    Stock trading at your fingertips
+</div>
+<br/>
+<div style="justify-content: center;">
+    <p style="display: flex; justify-content: center;">
+        Practice buying and selling stocks with real-time data.
+    </p>
+    <p style="display: flex; justify-content: center;">
+        Every search is logged in your quotes archive history.   
+    </p>
+    <p style="display: flex; justify-content: center;">
+        Deposit up to an additional $10k any time your account falls below $10k.
+    </p>
+</div>
+    <br/>        
     <form action="/login" method="post">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
@@ -14,4 +31,6 @@
         </div>
         <button class="btn btn-primary" type="submit">Log In</button>
     </form>
+</div>
+
 {% endblock %}

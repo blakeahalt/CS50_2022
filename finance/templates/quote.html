@@ -11,16 +11,17 @@
     table.center {
       margin-left: auto;
       margin-right: auto;
+      max-width: 450px;
     }
    </style>
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="/static/styles.css" rel="stylesheet">
-        <title>Stock Quotes</title>
+        <title>Search Archives</title>
     </head>
     <body>
         <div style="text-align:center" class="header">
-            <h1>Stock Quotes</h1>
+            <h1>Quote Archives</h1>
         </div>
         <br>
         <div class="container">
@@ -39,16 +40,16 @@
                 <thead>
                     <tr>
                       <th>Stock</th>
-                      <th>Price</th>
-                      <th>Time</th>
+                      <th style="text-align: right">Price</th>
+                      <th style="text-align: right">Time</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for quote in quotes %}
                       <tr>
                         <td>{{ quote.symbol }}</td>
-                        <td>{{ quote.price|usd }}</td>
-                        <td>{{ quote.date }}</td>
+                        <td style="text-align: right">{{ quote.price|usd }}</td>
+                        <td style="text-align: right">{{ quote.date }}</td>
                       </tr>
                     {% endfor %}
                 </tbody>

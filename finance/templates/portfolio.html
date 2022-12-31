@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block body %}
+       <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        table.center {
+          margin-left: auto;
+          margin-right: auto;
+          width:100%;
+        }
+       </style>
+       <h2 style="text-align: left; margin-left: 40px;">{{ username }}'s Portfolio</h2>
+
+    <div class="p-4 mb-4 bg-pt-dark2">
+        <tml class="table-responsive">
+            <table class="table table-striped" style="width:100%">
+                <thead>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Name</th>
+                    <!-- <th scope="col">Shares</th> -->
+                    <th style="text-align:center" colspan="3">Shares</th>
+                    <th style="text-align: right" scope="col">Price</th>
+                    <th style="text-align: right" scope="col">Total Cost</th>
+                </thead>
+                <tbody>
+                    {% for row in portfolio %}
+                    <tr>
+                        <td>{{ row.symbol }}</strong></a></td>
+                        <td>{{ row.name }}</td>
+                        <td style="text-align: center; min-width: 40px;" id="shares">{{  row.shares  }}
+                        <td align="center">
+                            <form action="/buy" method="post">
+                              <input name="symbol" value="{{  row.symbol  }}" type="hidden">
+                              <input style="width:40px; text-align:right" autocomplete="off" name="shares">
+                              <input style="width:80px" type="submit" value="Buy">
+                            </form>
+                          </td>
+                          <td align="center">
+                            <form action="/sell" method="post">
+                              <input name="symbol" value="{{  row.symbol  }}" type="hidden">
+                              <input style="width:40px; text-align:right" autocomplete="off" name="shares">
+                              <input style="width:80px" type="submit" value="Sell">
+                            </form>
+                          </td>
+                          <td style="text-align: right" id="price">{{  row.price|usd  }}</td>
+                          <td style="text-align: right" id="total">{{  row.total|usd  }} </td>
+                    </tr>
+                    {% endfor %}
+                      <tr>
+                        <td style="text-align: right" colspan="6" scope="1">Cash</td>
+                        <td style="text-align: right">{{  cash_usd  }}</td>
+                      </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th style="text-align: right" colspan="6" scope="1">TOTAL</td>
+                      <td style="text-align: right" scope="1">{{  grand_total_usd  }}</td>
+                    </tr>
+                  </tfoot>
+                </table>
+            </div>
+{% endblock %}

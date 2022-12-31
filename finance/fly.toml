@@ -1,17 +1,14 @@
-# fly.toml file generated for stocktrader on 2022-12-30T00:06:00-08:00
+# fly.toml file generated for stockpapertrader on 2022-12-30T15:13:01-08:00
 
-app = "stocktrader"
+app = "stockpapertrader"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [build]
-  dockerfile = "Dockerfile"
-
-[deploy]
+   dockerfile = "Dockerfile"
 
 [env]
-  PORT = "8080"
 
 [experimental]
   allowed_public_ports = []

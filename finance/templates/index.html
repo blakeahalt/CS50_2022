@@ -12,10 +12,10 @@
           margin-right: auto;
         }
        </style>
-       <h2 style="text-align:center">{{  username  }}'s Portfolio</h2>
+       <h2 style="text-align: center">{{ username }}'s Portfolio</h2>
     <br>
         <!-- <table class="table table-striped" class="center" style="width:90%"> -->
-        <table id="datatable" class="table table-striped center" role="grid" style="width:90%">
+        <table id="datatable" class="table table-striped center" role="grid" style="width:auto">
           <thead>
             <tr>
               <!-- <th style="text-align:center" colspan="2">Buy/Sell</th> -->
@@ -32,19 +32,19 @@
               <tr>
                 <td id="symbol">{{  row.symbol  }}</td>
                 <td id="name">{{  row.name  }}</td>
-                <td style="text-align: center" id="shares">{{  row.shares  }}
+                <td style="text-align: center; min-width: 40px;" id="shares">{{  row.shares  }}
                 <td align="center">
                   <form action="/buy" method="post">
                     <input name="symbol" value="{{  row.symbol  }}" type="hidden">
-                    <input style="width:80px" type="submit" value="Buy">
                     <input style="width:40px; text-align:right" autocomplete="off" name="shares">
+                    <input style="width:80px" type="submit" value="Buy">
                   </form>
                 </td>
                 <td align="center">
                   <form action="/sell" method="post">
                     <input name="symbol" value="{{  row.symbol  }}" type="hidden">
-                    <input style="width:80px" type="submit" value="Sell">
                     <input style="width:40px; text-align:right" autocomplete="off" name="shares">
+                    <input style="width:80px" type="submit" value="Sell">
                   </form>
                 </td>
                 <td style="text-align: right" id="price">{{  row.price|usd  }}</td>

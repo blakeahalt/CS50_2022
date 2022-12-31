@@ -2,17 +2,19 @@
 
 {% block body %}
        <h1 style="text-align:center;">Register</h1>
+       <br/>
 
        <form style="text-align:center;" action="/register" method="post">
-              <input autocomplete="off" autofocus name="username" placeholder="username" type="text">
+              <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
               <br>
-              <input autocomplete="off" autofocus name="password" placeholder="password" type="text">
+              <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
               <br>
-              <input autocomplete="off" autofocus name="confirmation" placeholder="confirmation" type="text">
+              <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Confirmation" type="password" style="margin-top:-15px">
               <br>
-              <br>
-              <button class="btn btn-primary" type="submit">Register</button>
+              <button class="btn btn-primary" type="submit" style="justify-content:center; text-align:center;">Submit</button>
        </form>
+       <br>
+       <div style="margin-left:auto; margin-right:auto; text-align: center; width:300px;">Password must be 6 or more characters and have at least 1 upper case</div>
 
 
 {% endblock %}

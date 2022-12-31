@@ -9,21 +9,20 @@
         table.center {
           margin-left: auto;
           margin-right: auto;
+          width: 100%;
         }
        </style>
       <h1 style="text-align:center;">Buy Stocks</h1>
-      <form style="text-align:center;" action="/buy" method="post">
-        <label for="mail">E-mail:</label>
-        <input style="text-align:center;" autocomplete="on" autofocus name="symbol" placeholder="Symbol" type="text">
-        <input style="text-align:center;" autocomplete="on" autofocus name="shares" placeholder="Shares" type="numeric" min="0">
+      <form style="text-align:center; justify-content:center;" action="/buy" method="post">
+        <label>Stock:</label>
+        <input style="text-align:center; width:auto;" autocomplete="on" autofocus name="symbol" placeholder="Symbol" type="text">
+        <input style="text-align:center; width: 75px" autocomplete="on" autofocus name="shares" placeholder="Shares" type="numeric" min="0">
         <button style="text-align:center" class="btn btn-primary" type="submit" value="Buy">Buy</button>
         <br>
         <br>
       </form>
-      <h3 style="text-align:left; margin-left:1em">{{  username  }}'s Portfolio</h2>
         <!-- <table class="table table-striped" class="center" style="width:90%"> -->
-        <br>
-        <table id="datatable" class="table table-striped center" role="grid" style="width:90%">
+        <table id="datatable" padding="10px" class="table table-striped center" role="grid" style="width:90%">
           <thead>
             <tr>
               <!-- <th style="text-align:center" colspan="2">Buy/Sell</th> -->
