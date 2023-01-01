@@ -1,4 +1,4 @@
-# NFT Tracker
+# NFT Sales Tracking Tool
 #### Video Demo:  <URL HERE>
 
 
@@ -35,9 +35,9 @@ REACT_APP_MYSQL_DATABASE='string'
 
 Unless you create these variables in your own environment, I don't believe this application will successfully start for you.
 
-To run dev mode: ./server/server.js "require("dotenv").config();" in line 12 must be toggled on to avoid runtime errors.
+To run dev mode: ./server/server.js "require("dotenv").config();" on line 12 must be toggled on to avoid runtime errors.
 
-Once running, Sign in with Google hits a cors error (blank pop-up). Navigating to 'http://localhost:3000/' will prevent this error and allow you to sign in with your Google account.
+Once running, Sign in with Google hits a cors error (blank pop-up). Navigating to 'http://localhost:3000' or 'http://localhost:3001'  will prevent this error and allow you to sign in with your Google account.
 
 ## Installing
 "node": "v16.15.1",
