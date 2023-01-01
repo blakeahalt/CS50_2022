@@ -1,5 +1,6 @@
 # NFT Sales Tracking Tool
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/p53ccOC10p8
+#### original github repo: https://github.com/blakeahalt/nftleague2
 
 
 ## About
