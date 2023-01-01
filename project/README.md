@@ -35,12 +35,13 @@ REACT_APP_MYSQL_DATABASE='string'
 
 Unless you create these variables in your own environment, I don't believe this application will successfully start for you.
 
-To run dev mode: ./server/server.js "require("dotenv").config();" on line 12 must be toggled on to avoid runtime errors.
-
-In the terminal
+To run dev mode: ./server/server.js "require("dotenv").config();" on line 12 must not be commented out.
+In the terminal `npm run dev` will concurrently run the server.js file and react-scripts.
 
 Once running, Sign in with Google hits a cors error (blank pop-up). Navigating to 'http://localhost:3000' or 'http://localhost:3001'  will prevent this error and allow you to sign in with your Google account.
 
+To run production mode: ./server/server.js "require("dotenv").config();" on line 12 must be commented out and the `.env` variables above must be set in whatever platform you're trying to deploy to.
+  
 ## Installing
 "node": "v16.15.1",
 "npm": "7.24.2"
