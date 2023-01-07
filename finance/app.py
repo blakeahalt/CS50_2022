@@ -12,13 +12,13 @@ import datetime
 # Configure application
 app = Flask(__name__)
 
-stocks = {}
+# stocks = {}
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # # Custom filter
-# app.jinja_env.filters["usd"] = usd
+app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -29,8 +29,8 @@ Session(app)
 db = SQL("sqlite:///finance.db")
 
 # Make sure API key is set
-# if not os.environ.get("API_KEY"):
-#     raise RuntimeError("API_KEY not set")
+if not os.environ.get("API_KEY"):
+    raise RuntimeError("API_KEY not set")
 api_key = os.environ.get("API_KEY")
 
 @app.after_request
@@ -46,15 +46,19 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    if request.method == "post":
+    if request.method == "POST":
         user_id = session["user_id"]
         user = db.execute("SELECT username FROM users WHERE id = ?", user_id)
         username = user[0]['username']
+
+        symbol = request.form.get("symbol")
 
         shares = request.form.get("shares")
         if shares != int(shares):
             return apology("Please enter number of shares")
         stocks = lookup(symbol.upper())
+        # if not stocks:
+        #     return apology("Invalid stock symbol")
         buy_sell = "Buy"
 
         int_shares = int(shares)
@@ -245,6 +249,45 @@ def buy():
         # user_cash = float(user_cash_db[0]['cash'])
         # update_cash = user_cash - cost
         return render_template("buy.html", username=username, portfolio=portfolio, cash_usd=cash_usd, grand_total_usd=grand_total_usd)
+
+# def buy():
+#     """Buy shares of stock"""
+#     if request.method == "GET":
+#         return render_template("buy.html")
+#     else:
+#         symbol = request.form.get("symbol")
+#         shares = int(request.form.get("shares"))
+
+#         if not symbol:
+#                 return apology("Must Give Symbol")
+
+#         stock = lookup(symbol.upper())
+
+#         if stock == None:
+#             return apology("Symbol Does Not Exist")
+
+#         if shares < 0:
+#             return apology("Share Not Allowed")
+
+#         transaction_value = shares * stock["price"]
+
+#         user_id = session["user_id"]
+#         user_cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+#         user_cash = user_cash_db[0]["cash"]
+
+#         if user_cash < transaction_value:
+#             return apology("Not Enough Money")
+#         uptd_cash = user_cash - transaction_value
+
+#         db.execute("UPDATE users SET cash = ? WHERE id = ?", uptd_cash, user_id)
+
+#         date = datetime.datetime.now()
+
+#         db.execute("INSERT INTO transactions (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, stock["symbol"], shares, stock["price"], date)
+
+#         flash("Boudht!")
+
+#         return redirect("/")
 
 
 @app.route("/history")

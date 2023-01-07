@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block title %}
+    Register
+{% endblock %}
+
 {% block body %}
        <h1 style="text-align:center;">Register</h1>
        <br/>
@@ -9,7 +13,7 @@
               <br>
               <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
               <br>
-              <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Confirmation" type="password" style="margin-top:-15px">
+              <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirmation" type="password" style="margin-top:-15px">
               <br>
               <button class="btn btn-primary" type="submit" style="justify-content:center; text-align:center;">Submit</button>
        </form>
