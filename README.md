@@ -1,3 +1,5 @@
+# [CS50 Finance App](https://stockpapertrader.fly.dev/)
+
 # Final Project
 ## NFT Sales Tracking Tool
 #### [Project Link](https://nftleague2.herokuapp.com/)
