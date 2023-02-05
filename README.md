@@ -1,8 +1,8 @@
-# CS50 Finance App
+# 1 - CS50 Finance App
 ## Mock Trading Application
 #### [Project Link](https://stockpapertrader.fly.dev/)
 
-# Final Project
+# 2 - Final Project
 ## NFT Sales Tracking Tool
 #### [Project Link](https://nftleague2.herokuapp.com/)
 #### [Original repo](https://github.com/blakeahalt/nftleague2)
