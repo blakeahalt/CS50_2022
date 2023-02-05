@@ -1,7 +1,7 @@
 # Final Project
 ## NFT Sales Tracking Tool
 #### [Project Link](https://nftleague2.herokuapp.com/)
-#### [original repo:](https://github.com/blakeahalt/nftleague2)
+#### [Original repo](https://github.com/blakeahalt/nftleague2)
 
 
 ## About
