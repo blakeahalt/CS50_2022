@@ -1,4 +1,6 @@
-# [CS50 Finance App](https://stockpapertrader.fly.dev/)
+# CS50 Finance App
+## Mock Trading Application
+#### [Project Link](https://stockpapertrader.fly.dev/)
 
 # Final Project
 ## NFT Sales Tracking Tool
